@@ -4,15 +4,17 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class ProblemTwo {
-    public String transform(List<LocalDate> s)
-    {String d = null;
-        for (LocalDate kc:s // arrival times
-        )
-        {if (kc.isAfter(LocalDate.now())) { d = d + kc + "\n";}
-        else {
-            d = d + "Delayed\n";
-        } // flight is delayed
+    public String transform(List<LocalDate> dates)
+    {
+        StringBuilder result=new StringBuilder();
+        for(LocalDate date:dates){
+            if(date.isAfter(LocalDate.now())){
+                result.append(date).append("\n");
+            }
+            else{
+                result.append("Delayed\n");
+            }
         }
-        return d;
+        return result.toString();
     }
 }
