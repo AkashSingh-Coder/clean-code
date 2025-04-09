@@ -16,15 +16,7 @@ public class ProblemOne {
 
     public boolean isEdible()
     {
-        if (this.expirationDate.isAfter(LocalDate.now()) &&
-                this.approvedForConsumption == true &&
-                this.inspectorId != null)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return this.expirationDate.isAfter(LocalDate.now()) && this.approvedForConsumption && this.inspectorId!=null;
+
     }
 }
