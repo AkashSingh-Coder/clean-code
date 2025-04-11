@@ -2,13 +2,13 @@ package org.example.basic;
 
 import java.time.LocalDate;
 
-public class ProblemOne {
+public class InspectedItemTest {
 
     private LocalDate expirationDate;
     private Boolean approvedForConsumption;
     private Integer inspectorId;
 
-    public ProblemOne(LocalDate expirationDate, Boolean approvedForConsumption, Integer inspectorId) {
+    public InspectedItemTest (LocalDate expirationDate, Boolean approvedForConsumption, Integer inspectorId) {
         this.expirationDate = expirationDate;
         this.approvedForConsumption = approvedForConsumption;
         this.inspectorId = inspectorId;
