@@ -21,7 +21,7 @@ public class OlxAppAMangoesTest {
 		app.updateQuality();
 		assertEquals("Mangoes", app.items[0].name);
 		assertEquals(14, app.items[0].sellIn);
-		assertEquals(2, app.items[0].quality);
+		assertEquals(2, app.items[0].quality) ;
 	}
 
 	/**
