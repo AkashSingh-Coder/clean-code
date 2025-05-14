@@ -15,13 +15,19 @@ public class OlxAppAMangoesTest {
 	 */
 	@Test
 	public void testUpdateQualityMangoes1() {
-		Item item = new Item("Mangoes", 15, 3);
+		String itemName="Mangoes";
+		int sellIn=15;
+		int quality=3;
+		Item item = new Item(itemName,sellIn, quality);
 		Item[] items = new Item[] { item };
 		OlxApp app = new OlxApp(items);
+
 		app.updateQuality();
-		assertEquals("Mangoes", app.items[0].name);
-		assertEquals(14, app.items[0].sellIn);
-		assertEquals(2, app.items[0].quality) ;
+		
+		Item result=app.items[0];
+		assertEquals(itemName, result.name);
+		assertEquals(sellIn-1, result.sellIn);
+		assertEquals(quality-1, result.quality) ;
 	}
 
 	/**
@@ -31,6 +37,7 @@ public class OlxAppAMangoesTest {
 	 */
 	@Test
 	public void testUpdateQualityForExpiredItem() {
+		
 		Item item = new Item("Mangoes", -1, 3);
 		Item[] items = new Item[] { item };
 		OlxApp app = new OlxApp(items);
